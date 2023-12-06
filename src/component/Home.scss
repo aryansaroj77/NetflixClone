@@ -1,0 +1,136 @@
+$bg: rgb(16, 16, 16);
+.banner{
+    height:600px;
+   background-color: $bg ;
+   background-size: cover;
+   background-repeat: no-repeat;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   padding: 3rem;
+   box-sizing: border-box;
+   &::after{
+       content:"";
+       width: 100%;
+       height: 100%;
+       position: absolute;
+       top: 0;
+       left: 0;
+       background: $bg;
+       opacity: 0.4;
+   }
+   h1,p{
+      color: white;
+      font-size: 3rem;
+      width: 40%;
+      z-index: 10;
+   }
+      p{
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    font-weight: 100;
+   }
+
+   > div{
+    display: flex;
+
+    button {
+        padding: 1rem;
+        width: 150px;
+        outline: none;
+        border: none;
+        z-index: 10;
+        border-radius: 5px;
+        margin: 1rem;
+        font-size: 1.2rem;
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        cursor: pointer;
+        transition: all 0.5s;
+        &:hover{
+            opacity: 0.6;
+        }
+      }
+      button:nth-child(odd) {
+        background-color: white;
+        color: black;
+      }
+      
+      button:nth-child(even) {
+        background-color: rgb(40, 38, 38);
+        color: white;
+      }
+       svg {
+        font-size: 1.8rem;
+        margin-right:0 10px;
+      }
+      
+   }
+}
+
+.row{
+    padding: 1rem;
+    background-color: $bg;
+    
+    >h2{
+        margin: 0.3rem;
+     font-weight: 400;
+}
+    > div{
+        display: flex;
+        overflow-x:auto ;
+    }
+}
+
+.card{
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.5s;
+   &:hover{
+    transform: translateY(-10px) scale(1.1);
+   }
+
+}
+
+.genrebox{
+     overflow-x:auto ;
+     display: flex;
+     height: 100px;
+     background-color: $bg;
+    >a{
+        color: black;
+        background-color: white;
+        border-radius: 10px;
+        padding: 1rem 0;
+        text-align: center;
+        transition: all 0.5s;
+        min-width: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+        &:hover{
+            background-color: rgb(236, 236, 236);
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .html{
+        width: 100%;
+    }
+    .banner {
+      h1,
+      p {
+        font-size: 1rem;
+      }
+    }
+  
+    .genrebox {
+      > a {
+        min-width: 45%; // Adjusted width for responsiveness
+      }
+    }
+  }
